@@ -1,47 +1,96 @@
+@import url('http://fonts.cdnfonts.com/css/minecraft-4');
+
 body {
-    background-color: orangered;
+    padding: 60px;
     margin: 0;
-    font-family: rubik;
-    color: white;
-  }
+    font-family: 'Minecraft', sans-serif;                                          
+    color: rgb(25, 19, 19);
+    background-color: #3e3d3ddc;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+ 
+}
   .container {
-    padding: 40px;
+    padding-block: 20px;
     margin: 0 auto;
+  
   }
   h1 {
-    text-transform: uppercase;
+    width: auto;
     text-align: center;
-    font-size: 54px;
+    font-size: 70px;
+    text-shadow: 4px 5px 6px rgba(178, 24, 24, 0.98);
   }
+
+  .sectionSearch {
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-around;
+    padding-inline: 350px; */
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    grid-gap: 20px;
+  }
+
+  .input {
+    padding-block: 10px;
+    padding-inline: 50px;
+    text-align: center;
+    font-family: 'Minecraft', sans-serif;
+    font-size: large;
+    border: solid;
+  }
+
+  .button {
+    padding: 10px;
+    font-family: 'Minecraft', sans-serif;
+    border: solid;
+  }
+
   .card {
-    list-style: none;
-    padding: 40px;
-    background-color: #f4f4f4;
-    color: #222;
-    text-align: center;
+    
+    width: 150px;
+    height: 200px;
+    border: 3px solid black;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ec0b0b50;
+    -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88); 
+    box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
   }
+
+  .card:hover {
+    background-color: #ffffff50;
+    -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88); 
+    box-shadow: 6px 7px 8px 0px rgba(255, 255, 255, 0.88);
+  }
+
   .card-title {
-    text-transform: uppercase;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: normal;
     margin-bottom: 0;
+    padding-bottom: 10px;
   }
   .card-subtitle {
     font-weight: lighter;
-    color: #666;
+    color: rgb(31, 25, 25);
     margin-top: 5px;
   }
   .card-image {
-    height: 180px;
+    height: 250px;
   }
+  
   #pokedex {
-    padding-inline-start: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     grid-gap: 20px;
+    
   }
   .card:hover {
-    animation: bounce 0.5s linear;
+    animation: bounce 1s linear;
   }
   @keyframes bounce {
     20% {
