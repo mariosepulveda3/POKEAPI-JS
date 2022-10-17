@@ -1,17 +1,6 @@
-
-const iconosTipos = ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"];
 const pokedex$$ = document.querySelector('#pokedex');
 const searchInput$$ = document.querySelector(".sectionSearch input");
 const ALL_POKEMONS_INFO = []; // Cuando una variable se declara en scope global para ser usada por otros, se hace en mayúsculas.
-
-// function getAllPokemons() {
-//   return fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-//     .then((response) => response.json())
-//     .then((response) => {
-//       return response.results;
-//     })
-//     .catch((error) => console.log('No existe', error));
-// }
 
 function getAllPokemons() {
     return fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -30,6 +19,7 @@ function getOnePokemon(url) {
     })
     .catch((error) => console.log('No existe', error));
 }
+
 
 const cleanPokedex = () => (pokedex$$.innerHTML = "");
 
@@ -65,16 +55,11 @@ const renderPokemonsCard = (poke) => {
       const p1$$ = document.createElement('p');
       p1$$.classList.add('card-subtitle');
       p1$$.textContent = poke.types[0].type.name;
-      
-    //   const p2$$ = document.createElement('p');
-    //   p2$$.classList.add('card-subtitle');
-    //   p2$$.textContent = poke.types[1].type.name;
 
       li$$.appendChild(divId$$);
       li$$.appendChild(p$$);
       li$$.appendChild(img$$);
       li$$.appendChild(p1$$);
-    //   li$$.appendChild(p2$$);
     
       pokedex$$.appendChild(li$$);
     };
@@ -104,21 +89,26 @@ const search = (value) => {
     });
   };
 
-  const imprimirTipos = (pokemon, div) => {
+const navbar$$ = document.querySelector('header');
 
-    for (const tipo of pokemon.types) {       
-        for (const tipoImagen of iconosTipos) {            
-            if (tipoImagen === tipo.type.name) {               
-                const imagenTipo = document.createElement("img");
-                imagenTipo.classList.add("tipo");
-                imagenTipo.setAttribute("src", "./imgs/icons/" + tipoImagen + ".svg");
-                imagenTipo.classList.add(`${tipoImagen}`);
-                div.appendChild(imagenTipo);
-            }
-        }
-    }
-}
-  
+const header$$ = document.createElement('div');
+header$$.classList.add('header');
+
+const ask$$ = document.createElement('h2');
+ask$$.textContent = '¿Que pokemon eres hoy?';
+ask$$.classList.add('askDay');
+
+const pokeball$$ = document.createElement('img');
+pokeball$$.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/770px-Pok%C3%A9_Ball_icon.svg.png');
+pokeball$$.classList.add('pokeball');
+
+const randomPokemon$$ = document.createElement('a');
+
+header$$.appendChild(randomPokemon$$);
+header$$.appendChild(ask$$);
+header$$.appendChild(pokeball$$);
+navbar$$.appendChild(header$$);
+
 
   const arrancar = async () => {
     addEventsListeners();
@@ -132,49 +122,6 @@ const search = (value) => {
     renderPokemons(ALL_POKEMONS_INFO);
   };
   
-
-
-// async function arrancar() {
-
-//     addEventsListeners();
-//   const allPokemons = await getAllPokemons();
-//   for(const pokemon of allPokemons) { 
-//     const pokemonInfo = await getOnePokemon(pokemon.url);
-//     ALL_POKEMONS_INFO.push(pokemonInfo);
-//   };
-
-//   console.log('ALL_POKEMONS_INFO', ALL_POKEMONS_INFO);
-//   renderPokemons(ALL_POKEMONS_INFO);
-// };
-
-// const search$$ = document.querySelector('#input');
-// function finderPoke (pokemon) {
-//     let searchPokemon$$ = []
-//     for (const poke of pokemon) {
-//         if(poke.name.includes(value)) {
-//             searchPokemon$$.push(poke);
-//         }
-//     }
-//     console.log(searchPokemon$$);
-//     search$$.appendChild(searchPokemon$$);
-//     renderPokemons(searchPokemon$$);
-    
-// }
-// search$$.addEventListener('keypress', () => finderPoke(ALL_POKEMONS_INFO));
-
-//? MODO DIOS = JUAN
-// const search = (event) => {
-//     const value = event.target.value;
-
-//     const filtered = ALL_POKEMONS_INFO.filter(pokemon => pokemon.name.includes(value));
-//     renderPokemons(filtered);
-// }
-
-// const addEventListener = () => {
-//     let searchInput = document.querySelector('. search-container input');
-//     searchInput.addEventListener ('input', search) ;
-// }
-
 
 window.onload = arrancar;
 
