@@ -5,7 +5,7 @@ body {
     margin: 0;
     font-family: 'Minecraft', sans-serif;                                          
     color: rgb(25, 19, 19);
-    background-color: #3e3d3ddc;
+    background-color: #cacacadc;
     background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
  
 }
@@ -31,7 +31,7 @@ body {
     grid-gap: 20px;
   }
 
-  .input {
+  #input {
     padding-block: 10px;
     padding-inline: 50px;
     text-align: center;
@@ -40,7 +40,7 @@ body {
     border: solid;
   }
 
-  .button {
+  #buttonSend {
     padding: 10px;
     font-family: 'Minecraft', sans-serif;
     border: solid;
@@ -49,9 +49,9 @@ body {
   .card {
     
     width: 150px;
-    height: 200px;
+    height: 250px;
     border: 3px solid black;
-    border-radius: 50px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,9 +62,16 @@ body {
   }
 
   .card:hover {
-    background-color: #ffffff50;
+    background-color: rgba(116, 119, 253, 0.678);
     -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88); 
     box-shadow: 6px 7px 8px 0px rgba(255, 255, 255, 0.88);
+  }
+
+  .id-card {
+    font-size: 15px;
+    color: whitesmoke;
+    font-weight: normal;
+    margin-bottom: 0;
   }
 
   .card-title {
@@ -74,9 +81,16 @@ body {
     padding-bottom: 10px;
   }
   .card-subtitle {
+    padding: 3px 5px 8px 5px;
     font-weight: lighter;
-    color: rgb(31, 25, 25);
-    margin-top: 5px;
+    color: rgb(255, 255, 255);
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid rgb(255, 252, 252);
+    border-width: 1px;
+    border-radius: 50px;
   }
   .card-image {
     height: 250px;
