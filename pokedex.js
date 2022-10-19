@@ -1,6 +1,20 @@
 const pokedex$$ = document.querySelector("#pokedex");
 const searchInput$$ = document.querySelector(".sectionSearch input");
-const ALL_POKEMONS_INFO = []; // Cuando una variable se declara en scope global para ser usada por otros, se hace en mayúsculas.
+const ALL_POKEMONS_INFO = [];
+
+const arrancar = async () => {
+  addEventsListeners();
+  const allPokemons = await getAllPokemons();
+
+  for (const pokemon of allPokemons) {
+    const pokemonIndividualInfo = await getOnePokemon(pokemon.url);
+    ALL_POKEMONS_INFO.push(pokemonIndividualInfo);
+  }
+  console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
+  renderPokemons(ALL_POKEMONS_INFO);
+};
+
+window.onload = arrancar;
 
 function getAllPokemons() {
   return fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
@@ -27,7 +41,7 @@ const renderNoResults = () => {
 
   const p$$ = document.createElement("p");
   p$$.classList.add("card-title");
-  p$$.textContent = "No se encuentran resultados";
+  p$$.textContent = "No existe";
 
   li$$.appendChild(p$$);
   pokedex$$.appendChild(li$$);
@@ -61,10 +75,6 @@ const renderPokemonsCard = (poke) => {
   pokedex$$.appendChild(li$$);
 };
 
-// const hoverCard = (poke) => {
-
-// }
-
 const renderPokemons = (pokemons) => {
   cleanPokedex();
   if (!pokemons.length) renderNoResults();
@@ -88,7 +98,7 @@ const addEventsListeners = () => {
   });
 };
 
-const navbar$$ = document.querySelector("header");
+const navbar$$ = document.querySelector("h1");
 
 const header$$ = document.createElement("div");
 header$$.classList.add("header");
@@ -104,12 +114,15 @@ pokeball$$.setAttribute(
 );
 pokeball$$.classList.add("pokeball");
 
-
 pokeball$$.addEventListener("click", function (event) {
   let randomPokemon = Math.floor(Math.random() * 151) + 1;
-      let imgPoke$$ = ALL_POKEMONS_INFO[randomPokemon].sprites.front_default;
-      let newWindow$$ = open(imgPoke$$, title = 'Pokemon', 'width=200, height=200');
-    });
+  let imgPoke$$ = ALL_POKEMONS_INFO[randomPokemon].sprites.front_default;
+  let newWindow$$ = open(
+    imgPoke$$,
+    (title = "Pokemon"),
+    "width=200, height=200"
+  );
+});
 
 const randomPokemon$$ = document.createElement("a");
 
@@ -118,16 +131,116 @@ header$$.appendChild(ask$$);
 header$$.appendChild(pokeball$$);
 navbar$$.appendChild(header$$);
 
-const arrancar = async () => {
-  addEventsListeners();
-  const allPokemons = await getAllPokemons();
+const imgTypes$$ = document.querySelector(".icons");
+const bicho$$ = document.createElement("img");
+bicho$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Pok%C3%A9mon_Bug_Type_Icon.svg/512px-Pok%C3%A9mon_Bug_Type_Icon.svg.png?20200511091608"
+);
+const dragon$$ = document.createElement("img");
+dragon$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Pok%C3%A9mon_Dragon_Type_Icon.svg/640px-Pok%C3%A9mon_Dragon_Type_Icon.svg.png"
+);
+const electrico$$ = document.createElement("img");
+electrico$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/640px-Pok%C3%A9mon_Electric_Type_Icon.svg.png"
+);
+const hada$$ = document.createElement("img");
+hada$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Pok%C3%A9mon_Fairy_Type_Icon.svg/640px-Pok%C3%A9mon_Fairy_Type_Icon.svg.png"
+);
+const lucha$$ = document.createElement("img");
+lucha$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Pok%C3%A9mon_Fighting_Type_Icon.svg/640px-Pok%C3%A9mon_Fighting_Type_Icon.svg.png"
+);
+const fuego$$ = document.createElement("img");
+fuego$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Pok%C3%A9mon_Fire_Type_Icon.svg/640px-Pok%C3%A9mon_Fire_Type_Icon.svg.png"
+);
+const volador$$ = document.createElement("img");
+volador$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pok%C3%A9mon_Flying_Type_Icon.svg/640px-Pok%C3%A9mon_Flying_Type_Icon.svg.png"
+);
+const fantasma$$ = document.createElement("img");
+fantasma$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Pok%C3%A9mon_Ghost_Type_Icon.svg/640px-Pok%C3%A9mon_Ghost_Type_Icon.svg.png"
+);
+const hierba$$ = document.createElement("img");
+hierba$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pok%C3%A9mon_Grass_Type_Icon.svg/640px-Pok%C3%A9mon_Grass_Type_Icon.svg.png"
+);
+const tierra$$ = document.createElement("img");
+tierra$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pok%C3%A9mon_Ground_Type_Icon.svg/640px-Pok%C3%A9mon_Ground_Type_Icon.svg.png"
+);
+const hielo$$ = document.createElement("img");
+hielo$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Pok%C3%A9mon_Ice_Type_Icon.svg/640px-Pok%C3%A9mon_Ice_Type_Icon.svg.png"
+);
+const normal$$ = document.createElement("img");
+normal$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Pok%C3%A9mon_Normal_Type_Icon.svg/640px-Pok%C3%A9mon_Normal_Type_Icon.svg.png"
+);
+const veneno$$ = document.createElement("img");
+veneno$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Pok%C3%A9mon_Poison_Type_Icon.svg/640px-Pok%C3%A9mon_Poison_Type_Icon.svg.png"
+);
+const psiquico$$ = document.createElement("img");
+psiquico$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Pok%C3%A9mon_Psychic_Type_Icon.svg/640px-Pok%C3%A9mon_Psychic_Type_Icon.svg.png"
+);
+const roca$$ = document.createElement("img");
+roca$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Pok%C3%A9mon_Rock_Type_Icon.svg/640px-Pok%C3%A9mon_Rock_Type_Icon.svg.png"
+);
+const acero$$ = document.createElement("img");
+acero$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Pok%C3%A9mon_Steel_Type_Icon.svg/640px-Pok%C3%A9mon_Steel_Type_Icon.svg.png"
+);
+const agua$$ = document.createElement("img");
+agua$$.setAttribute(
+  "src",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pok%C3%A9mon_Water_Type_Icon.svg/640px-Pok%C3%A9mon_Water_Type_Icon.svg.png"
+);
 
-  for (const pokemon of allPokemons) {
-    const pokemonIndividualInfo = await getOnePokemon(pokemon.url);
-    ALL_POKEMONS_INFO.push(pokemonIndividualInfo);
-  }
-  console.log("ALL_POKEMONS_INFO", ALL_POKEMONS_INFO);
-  renderPokemons(ALL_POKEMONS_INFO);
-};
+imgTypes$$.appendChild(bicho$$);
+imgTypes$$.appendChild(dragon$$);
+imgTypes$$.appendChild(electrico$$);
+imgTypes$$.appendChild(hada$$);
+imgTypes$$.appendChild(lucha$$);
+imgTypes$$.appendChild(fuego$$);
+imgTypes$$.appendChild(volador$$);
+imgTypes$$.appendChild(fantasma$$);
+imgTypes$$.appendChild(hierba$$);
+imgTypes$$.appendChild(tierra$$);
+imgTypes$$.appendChild(hielo$$);
+imgTypes$$.appendChild(normal$$);
+imgTypes$$.appendChild(veneno$$);
+imgTypes$$.appendChild(psiquico$$);
+imgTypes$$.appendChild(roca$$);
+imgTypes$$.appendChild(acero$$);
+imgTypes$$.appendChild(agua$$);
 
-window.onload = arrancar;
+const footer$$ = document.querySelector("footer");
+const snorlax$$ = document.createElement("img");
+snorlax$$.setAttribute(
+  "src",
+  "https://cdn-icons-png.flaticon.com/512/189/189001.png"
+);
+snorlax$$.classList.add(".footer");
+footer$$.appendChild(snorlax$$);

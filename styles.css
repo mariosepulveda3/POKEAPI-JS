@@ -1,171 +1,178 @@
-@import url('http://fonts.cdnfonts.com/css/minecraft-4');
+@import url("http://fonts.cdnfonts.com/css/minecraft-4");
 
 body {
-    padding: 60px;
-    margin: 0;
-    font-family: 'Minecraft', sans-serif;                                          
-    color: rgb(25, 19, 19);
-    background-color: #cacacadc;
-    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
- 
+  padding: 40px;
+  margin: 0;
+  font-family: "Minecraft", sans-serif;
+  color: rgb(25, 19, 19);
+  background-color: #cacacadc;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
 
-  header {
-    text-align: center;
-    display: flex;
-  }
+header {
+  text-align: center;
+  display: flex;
+}
 
-  .askDay {
-    font-size: 20px;
-    animation-delay: initial;
-  }
+.askDay {
+  font-size: 20px;
+  animation-delay: initial;
+}
 
-  .pokeball {
-    height: 80px;
-    width: 80px;
-    animation-timing-function: step-start;
-  }
-    
-  .pokeball:hover {
-      animation: bounce 1s linear;
-    }
+.pokeball {
+  height: 80px;
+  width: 80px;
+  animation-timing-function: step-start;
+}
+
+.pokeball:hover {
+  animation: bounce 1s linear;
+}
+
+.container {
+  /* padding-block: 20px; */
+  margin: 0 auto;
+}
+h1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  align-items: center;
   
-  .container {
-    /* padding-block: 20px; */
-    margin: 0 auto;
-  
-  }
-  h1 {
-    width: auto;
-    text-align: center;
-    font-size: 70px;
-    text-shadow: 4px 5px 6px rgba(178, 24, 24, 0.98);
-    margin-top: -70px;
-  }
 
-  .sectionSearch {
-    display: flex;
-    justify-content: center;
-    /* justify-content: space-around;
+  padding-bottom: 20px;
+  width: auto;
+  font-size: 70px;
+  text-shadow: 4px 5px 6px rgba(178, 24, 24, 0.98);
+}
+
+.sectionSearch {
+  display: flex;
+  justify-content: center;
+  /* justify-content: space-around;
     padding-inline: 350px; */
-    padding-bottom: 30px;
-    flex-wrap: wrap;
-    grid-gap: 20px;
-  }
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+  grid-gap: 20px;
+}
 
-  #input {
-    padding-block: 10px;
-    padding-inline: 50px;
-    margin-bottom: -20px;
-    text-align: center;
-    font-family: 'Minecraft', sans-serif;
-    font-size: large;
-    border: solid;
-  }
+#input {
+  padding-block: 10px;
+  padding-inline: 50px;
+  margin-bottom: -20px;
+  text-align: center;
+  font-family: "Minecraft", sans-serif;
+  font-size: large;
+  border: solid;
+}
 
-  /* #buttonSend {
+/* #buttonSend {
     padding: 10px;
     font-family: 'Minecraft', sans-serif;
     border: solid;
   } */
 
-
 .icons {
-    display: flex;
-    /* width: 80%; */
-    margin: 5% 10% 5%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #ec0b0b50;
-    border: solid black;
-    -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88); 
-    box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
+  display: flex;
+  /* width: 80%; */
+  margin: 5% 10% 5%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec0b0b50;
+  border: solid black;
+  -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
+  box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
 }
 
 .icons img {
-    width: 34px;
-    margin: 10px;
+  width: 34px;
+  margin: 10px;
 }
 
 .icons img:hover {
-    width: 40px;
-    margin: 5px;
+  width: 40px;
+  margin: 5px;
 }
 
-  .card {
-    width: 150px;
-    height: 250px;
-    border: 3px solid black;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ec0b0b50;
-    -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88); 
-    box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
-  }
+.card {
+  position: relative;
+  width: 150px;
+  height: 250px;
+  border: 3px solid black;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec0b0b50;
+  -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
+  box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
+}
 
-  .card:hover {
-    background-color: rgba(116, 119, 253, 0.678);
-    -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88); 
-    box-shadow: 6px 7px 8px 0px rgba(255, 255, 255, 0.88);
-  }
+.card:hover {
+  background-color: rgba(116, 119, 253, 0.678);
+  -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
+  box-shadow: 6px 7px 8px 0px rgba(255, 255, 255, 0.88);
+}
 
-  .id-card {
-    font-size: 15px;
-    color: whitesmoke;
-    font-weight: normal;
-    margin-bottom: 0;
-  }
+.id-card {
+  font-size: 15px;
+  color: whitesmoke;
+  font-weight: normal;
+  margin-bottom: 0;
+}
 
-  .card-title {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 0;
-    padding-bottom: 10px;
-  }
+.card-title {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
 
-  .card-subtitle {
-    padding: 3px 5px 8px 5px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-    margin: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid rgb(255, 252, 252);
-    border-width: 1px;
-    border-radius: 50px;
+.card-subtitle {
+  padding: 3px 5px 8px 5px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  margin: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid rgb(255, 252, 252);
+  border-width: 1px;
+  border-radius: 50px;
+}
+
+.card-image {
+  height: 250px;
+}
+
+#pokedex {
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 20px;
+}
+.card:hover {
+  animation: bounce 1s linear;
+}
+@keyframes bounce {
+  20% {
+    transform: translateY(-6px);
   }
-  
-  .card-image {
-    height: 250px;
+  40% {
+    transform: translateY(-2px);
   }
-  
-  #pokedex {
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    grid-gap: 20px;
-    
+  60% {
+    transform: translateY(-2px);
   }
-  .card:hover {
-    animation: bounce 1s linear;
+  80% {
+    transform: translateY(-0px);
   }
-  @keyframes bounce {
-    20% {
-      transform: translateY(-6px);
-    }
-    40% {
-      transform: translateY(-2px);
-    }
-    60% {
-      transform: translateY(-2px);
-    }
-    80% {
-      transform: translateY(-0px);
-    }
-  }
+}
+
+.footer {
+  width: 50px;
+  height: 50px;
+}
