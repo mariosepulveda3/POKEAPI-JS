@@ -2,7 +2,7 @@ const pokedex$$ = document.querySelector("#pokedex");
 const searchInput$$ = document.querySelector(".sectionSearch input");
 const ALL_POKEMONS_INFO = [];
 
-const arrancar = async () => {
+const start = async () => {
   addEventsListeners();
   const allPokemons = await getAllPokemons();
 
@@ -14,7 +14,7 @@ const arrancar = async () => {
   renderPokemons(ALL_POKEMONS_INFO);
 };
 
-window.onload = arrancar;
+window.onload = start;
 
 function getAllPokemons() {
   return fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
@@ -235,12 +235,3 @@ imgTypes$$.appendChild(psiquico$$);
 imgTypes$$.appendChild(roca$$);
 imgTypes$$.appendChild(acero$$);
 imgTypes$$.appendChild(agua$$);
-
-const footer$$ = document.querySelector("footer");
-const snorlax$$ = document.createElement("img");
-snorlax$$.setAttribute(
-  "src",
-  "https://cdn-icons-png.flaticon.com/512/189/189001.png"
-);
-snorlax$$.classList.add(".footer");
-footer$$.appendChild(snorlax$$);
