@@ -41,7 +41,7 @@ const renderNoResults = () => {
 
   const p$$ = document.createElement("p");
   p$$.classList.add("card-title");
-  p$$.textContent = "No existe";
+  p$$.textContent = "No existe... Es que no tuviste infancia?";
 
   li$$.appendChild(p$$);
   pokedex$$.appendChild(li$$);
@@ -123,7 +123,6 @@ pokeball$$.addEventListener("click", function (event) {
     "width=200, height=200"
   );
 });
-
 const randomPokemon$$ = document.createElement("a");
 
 header$$.appendChild(randomPokemon$$);

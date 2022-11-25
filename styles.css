@@ -1,7 +1,7 @@
 @import url("http://fonts.cdnfonts.com/css/minecraft-4");
 
 body {
-  padding: 40px;
+  padding-inline: 30px;
   margin: 0;
   font-family: "Minecraft", sans-serif;
   color: rgb(25, 19, 19);
@@ -9,9 +9,8 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
 
-header {
+.container {
   text-align: center;
-  display: flex;
 }
 
 .askDay {
@@ -23,61 +22,42 @@ header {
   height: 80px;
   width: 80px;
   animation-timing-function: step-start;
+  cursor: pointer;
 }
 
 .pokeball:hover {
   animation: bounce 1s linear;
 }
 
-.container {
-  /* padding-block: 20px; */
-  margin: 0 auto;
-}
 h1 {
   display: flex;
   justify-content: space-around;
   flex-direction: row-reverse;
-  align-items: center;
-
-  padding-bottom: 20px;
+  flex-wrap: wrap;
   width: auto;
   font-size: 70px;
   text-shadow: 4px 5px 6px rgba(178, 24, 24, 0.98);
 }
 
 .sectionSearch {
-  display: flex;
-  justify-content: center;
-  /* justify-content: space-around;
-    padding-inline: 350px; */
-  padding-bottom: 30px;
-  flex-wrap: wrap;
-  grid-gap: 20px;
+  text-align: center;
 }
 
 #input {
   padding-block: 10px;
   padding-inline: 50px;
-  margin-bottom: -20px;
+  margin-bottom: 20px;
   text-align: center;
   font-family: "Minecraft", sans-serif;
   font-size: large;
   border: solid;
 }
 
-/* #buttonSend {
-    padding: 10px;
-    font-family: 'Minecraft', sans-serif;
-    border: solid;
-  } */
-
 .icons {
   display: flex;
-  /* width: 80%; */
-  margin: 5% 10% 5%;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  margin-inline: 100px;
   background-color: #ec0b0b50;
   border: solid black;
   -webkit-box-shadow: 6px 7px 8px 0px rgba(150, 0, 0, 0.88);
@@ -87,11 +67,6 @@ h1 {
 .icons img {
   width: 34px;
   margin: 10px;
-}
-
-.icons img:hover {
-  width: 40px;
-  margin: 5px;
 }
 
 .card {
@@ -118,36 +93,24 @@ h1 {
 .id-card {
   font-size: 15px;
   color: whitesmoke;
-  font-weight: normal;
-  margin-bottom: 0;
 }
 
 .card-title {
   font-size: 20px;
-  font-weight: normal;
-  margin-bottom: 0;
-  padding-bottom: 10px;
 }
 
 .card-subtitle {
   padding: 3px 5px 8px 5px;
-  font-weight: lighter;
   color: rgb(255, 255, 255);
-  margin: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid rgb(255, 252, 252);
-  border-width: 1px;
+  border: solid 1px rgb(255, 252, 252);
   border-radius: 50px;
 }
 
-.card-image {
-  height: 250px;
-}
-
 #pokedex {
-  padding: 0px;
+  padding: 50px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -168,5 +131,55 @@ h1 {
   }
   80% {
     transform: translateY(-0px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding-inline: 10px;
+  }
+
+  .askDay {
+    font-size: 15px;
+  }
+
+  .pokeball {
+    height: 60px;
+    width: 60px;
+  }
+
+  #input {
+    font-size: 15px;
+    width: 150px;
+  }
+  .icons {
+    margin: 22px;
+  }
+  .icons img {
+    width: 25px;
+    margin: 5px;
+  }
+
+  #pokedex {
+    margin-top: 10px;
+    padding: 5px;
+    grid-gap: 10px;
+  }
+
+  .card {
+    width: 100px;
+    height: 200px;
+  }
+
+  .id-card {
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-subtitle {
+    font-size: 10px;
   }
 }
