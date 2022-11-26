@@ -186,10 +186,11 @@ h1 {
 
 @media screen and (max-width: 500px) {
   body {
-    padding-inline: 10px;
+    padding-inline: 5px;
   }
 
   .askDay {
+    padding-top: 10px;
     font-size: 15px;
   }
 
@@ -199,15 +200,16 @@ h1 {
   }
 
   #input {
+    padding-inline: 0;
     font-size: 15px;
-    width: 150px;
+    width: 200px;
   }
   .icons {
     margin: 22px;
   }
   .icons img {
-    width: 25px;
-    margin: 5px;
+    width: 22px;
+    margin: 4px;
   }
 
   #pokedex {
